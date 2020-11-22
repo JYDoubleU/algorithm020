@@ -24,10 +24,9 @@ pub fn rotate_replace(nums: &mut Vec<i32>, k: i32) {
     if len < 1 {
         return;
     }
-    // let mut count = 0;
+    let mut count = 0;
     let mut start = 0;
-    let end = len - k as usize;
-    while start < end {
+    while count < len {
         let mut curIdx = start;
         let mut curVal = nums[curIdx];
         loop {
@@ -36,7 +35,7 @@ pub fn rotate_replace(nums: &mut Vec<i32>, k: i32) {
             nums[realIdx] = curVal;
             curVal = tmp;
             curIdx = realIdx;
-            // count += 1;
+            count += 1;
             if curIdx == start {
                 break;
             }
